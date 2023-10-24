@@ -1,0 +1,35 @@
+{% extends 'components/base.html' %}
+
+{% block content %}
+        <form id="track">
+            <div class="mb-3">
+              <label for="InputOrderId" class="form-label">Вкажть номер замолення</label>
+              <input type="text" class="form-control" id="InputOrderId" aria-describedby="orderid">
+              <div id="orderHelper" class="form-text"></div>
+            </div>
+            <button type="submit" class="btn btn-primary">Відправит</button>
+          </form>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Колір</th>
+                <th scope="col">Вага</th>
+                <th scope="col">Ціна</th>
+                <th scope="col">Адесса</th>
+                <th scope="col">Статус</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="showTrack">
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+  <script src="{{url_for('static', filename='js/track.js')}}"></script>
+{% endblock %}

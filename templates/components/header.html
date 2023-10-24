@@ -1,0 +1,12 @@
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom ">
+            <a href="{{ url_for('index') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <span class="fs-4">Еверест</span>
+            </a>
+
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="{{ url_for('index') }}"  class="nav-link {{'active' if products}}">Товари</a></li>
+                <li class="nav-item"><a href="{{ url_for('orders') }}" class="nav-link {{'active' if orders}}">Мої замовлення</a></li>
+                <li class="nav-item"><a href="{{ url_for('track') }}" class="nav-link {{'active' if track}}">Відстежити</a></li>
+                <li class="nav-item"><a href="/admin" class="nav-link">Адмінка</a></li>
+            </ul>
+        </header>

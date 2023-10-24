@@ -1,0 +1,48 @@
+{% extends 'components/base.html' %}
+
+{% block content %}
+        
+        <div class="card">
+            <div class="card-body">
+                <form action="create_order" method="post">
+                    <h5 class="card-title">Товар №{{product.id}}</h5>
+                    <div class="d-flex gap-3">
+                        <p class="card-text"><span class="key-card-text-color">Колір:</span> {{product.color}} </p>
+                        <p class="card-text"><span class="key-card-text-color">Вага:</span> {{product.weight}}</p>
+                        <p class="card-text"><span class="key-card-text-color">Ціна:</span> {{product.price}}</p>
+                    </div>
+                    <h5>Виберіть адресу доставки</h5>
+                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg" name="country">
+    <!--                    <option selected>Країна</option>-->
+    <!--                    <option value="1">Один</option>-->
+    <!--                    <option value="2">Два</option>-->
+    <!--                    <option value="3">Три</option>-->
+                        {%for country in countrys%}
+                            <option value="{{country.id}}">{{country.name}}</option>
+                        {%endfor%}
+                      </select>
+
+                      <select class="form-select form-select-sm mb-1" aria-label=".form-select-sm" name="city">
+    <!--                    <option selected>Місто</option>-->
+    <!--                    <option value="1">Один</option>-->
+    <!--                    <option value="2">Два</option>-->
+    <!--                    <option value="3">Три</option>-->
+                        {%for city in citys%}
+                            <option value="{{city.id}}">{{city.name}}</option>
+                        {%endfor%}
+                      </select>
+                      <select class="form-select form-select-sm mb-2" aria-label=".form-select-sm" name="street">
+    <!--                    <option selected>Вулиця</option>-->
+    <!--                    <option value="1">Один</option>-->
+    <!--                    <option value="2">Два</option>-->
+    <!--                    <option value="3">Три</option>-->
+                        {%for street in streets%}
+                            <option value="{{street.id}}">{{street.name}}</option>
+                        {%endfor%}
+                      </select>
+                    <input type="hidden" value="{{product.id}}" name="product">
+                    <button class="btn btn-primary">Заказати</button>
+                </form>
+            </div>
+        </div>
+{% endblock %}
